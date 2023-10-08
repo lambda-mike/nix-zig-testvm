@@ -29,7 +29,7 @@ stdenv.mkDerivation {
     cp ./getnic $out/bin/
   '';
 
-  # zig hook is needed to make zig compile work properly
+  # zig hook is needed to make zig compiler work properly
   nativeBuildInputs = [
     zig.hook
   ];

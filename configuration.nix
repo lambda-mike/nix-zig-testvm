@@ -1,9 +1,13 @@
 { pkgs, ... }:
 let
-  # TODO experiment with using overlay instead of callPackage directly here
   getni = pkgs.callPackage ./getni { };
 in
 {
+  # For some reason this causes the full rebuild and takes ages;
+  # if you know how to fix it, please open a PR/comment on the issue - thanks!
+  # Issue on GH: https://github.com/lambda-mike/nix-zig-testvm/issues/1
+  # nixpkgs.overlays = [ (final: prev: (import ./getni { inherit (prev) stdenv zig; })) ];
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
