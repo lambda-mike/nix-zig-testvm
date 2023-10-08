@@ -10,7 +10,7 @@ Small example of custom derivation building example zig application that consume
 
 ### Run
 
-`result/getni`
+`result/bin/getni`
 
 ## NixOS test VM
 
